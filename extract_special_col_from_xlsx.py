@@ -9,7 +9,7 @@ import pandas as pd
 import re
 
 parser = argparse.ArgumentParser(description="get col from xlsx")
-parser.add_argument("-i", dest="i", type=str, required=True, help="please input file name : *.xlsx,if no :all")
+parser.add_argument("-i", dest="i", type=str, required=True, help="please input file name : *.xlsx")
 parser.add_argument("-s", dest="s", type=str, help="please input col names")
 parser.add_argument("-o", dest="o", type=str, required=True, help="please output file name!")
 args = parser.parse_args()
