@@ -11,15 +11,15 @@ import sys
 
 parser = argparse.ArgumentParser(description="change string_data to humaned")
 parser.add_argument("-i1", "--DE_list", dest="DE_list", type=str, required=True, help="please input DE.list,normally 'A_vs_B.DE.list'")
-parser.add_argument("-i2", "--annotation", dest="annotation", type=str, required=True, help="please input DE.list,normally 'A_vs_B.protein_annotations.tsv'")
-parser.add_argument("-i3", "--interaction", dest="interaction", type=str, required=True, help="please input interactions.tsv,normally 'A_vs_B.interactions.tsv'")
-parser.add_argument("-o1", "--annotation_out", dest="annotation_out", type=str, help="out annotations.tsv name, default:'A_vs_B.protein_annotations.tsv_new'")
-parser.add_argument("-o2", "--interaction_out", dest="interaction_out", type=str, help="out interactions.tsv name, default:'A_vs_B.interactions.tsv_new'")
+parser.add_argument("-i2", "--annotation", dest="annotation", type=str, required=True, help="please input DE.list,normally 'A_vs_B.protein_annotation.tsv'")
+parser.add_argument("-i3", "--interaction", dest="interaction", type=str, required=True, help="please input interactions.tsv,normally 'A_vs_B.interaction.tsv'")
+parser.add_argument("-o1", "--annotation_out", dest="annotation_out", type=str, help="out annotations.tsv name, default:'A_vs_B.protein_annotation.xls'")
+parser.add_argument("-o2", "--interaction_out", dest="interaction_out", type=str, help="out interactions.tsv name, default:'A_vs_B.interaction.xls'")
 args = parser.parse_args()
 if not args.annotation_out:
-	args.annotation_out = '%s_new' %args.annotation
+	args.annotation_out = args.annotation.split('annotation.tsv')[0]+'annotation.xls'
 if not args.interaction_out:
-	args.interaction_out = '%s_new' %args.interaction	
+	args.interaction_out = args.interaction.split('interaction.tsv')[0]+'interaction.xls'
 
 def get_idmapping(de_list,protein_annotations):
 	os.environ['delist'] = de_list
