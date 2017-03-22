@@ -60,7 +60,7 @@ class label(object):
         for comb in self.combs:
             diff_vs_w = open('diff/%s_vs_%s.exp.txt' %
                              (str(comb[0]), str(comb[1])), 'a')
-            diff_list_w = open('diff/%s_vs_%s.exp.diff.xls.list' %
+            diff_list_w = open('diff/%s_vs_%s.diff.exp.xls.list' %
                                (str(comb[0]), str(comb[1])), 'a')
             comb0 = [
                 s for s in self.sample_config.keys()
